@@ -1593,6 +1593,14 @@
     prompts "^2.4.2"
     semver "^7.5.2"
 
+"@react-native-tvos/virtualized-lists@0.73.6-3":
+  version "0.73.6-3"
+  resolved "https://registry.yarnpkg.com/@react-native-tvos/virtualized-lists/-/virtualized-lists-0.73.6-3.tgz#43242732dff09cb0defd4fe5f04414edd359ad26"
+  integrity sha512-CvZh4qiJWYEP4KOUMwmqPjy8Wg4jcnCSecrutDIBqR8Hg4BXmoX4gv5L1EZD99kxau1mNXIG52YzCPhXmMWjIw==
+  dependencies:
+    invariant "^2.2.4"
+    nullthrows "^1.1.1"
+
 "@react-native/assets-registry@0.73.1":
   version "0.73.1"
   resolved "https://registry.npmjs.org/@react-native/assets-registry/-/assets-registry-0.73.1.tgz"
@@ -1852,14 +1860,6 @@
   version "0.75.0-main"
   resolved "https://registry.npmjs.org/@react-native/typescript-config/-/typescript-config-0.75.0-main.tgz"
   integrity sha512-pA2EZlfr1uD20HSbQVfmc/8ALED29q/3oohBGR+s74jjCJg5u76bsD9EsV0p6CR48u2//cjIyx0MvN8BAsPX1A==
-
-"@react-native/virtualized-lists@0.73.4":
-  version "0.73.4"
-  resolved "https://registry.npmjs.org/@react-native/virtualized-lists/-/virtualized-lists-0.73.4.tgz"
-  integrity sha512-HpmLg1FrEiDtrtAbXiwCgXFYyloK/dOIPIuWW3fsqukwJEWAiTzm1nXGJ7xPU5XTHiWZ4sKup5Ebaj8z7iyWog==
-  dependencies:
-    invariant "^2.2.4"
-    nullthrows "^1.1.1"
 
 "@sideway/address@^4.1.5":
   version "4.1.5"
@@ -5398,9 +5398,9 @@ range-parser@~1.2.1:
   resolved "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz"
   integrity sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==
 
-react-devtools-core@^4.27.7:
+react-devtools-core@^4.28.4:
   version "4.28.5"
-  resolved "https://registry.npmjs.org/react-devtools-core/-/react-devtools-core-4.28.5.tgz"
+  resolved "https://registry.yarnpkg.com/react-devtools-core/-/react-devtools-core-4.28.5.tgz#c8442b91f068cdf0c899c543907f7f27d79c2508"
   integrity sha512-cq/o30z9W2Wb4rzBefjv5fBalHU0rJGZCHAkf/RHSBWSSYwh8PlQTqqOJmgIIbBtpj27T6FIPXeomIjZtCNVqA==
   dependencies:
     shell-quote "^1.6.1"
@@ -5421,22 +5421,22 @@ react-is@^17.0.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-native@0.73.6:
-  version "0.73.6"
-  resolved "https://registry.npmjs.org/react-native/-/react-native-0.73.6.tgz"
-  integrity sha512-oqmZe8D2/VolIzSPZw+oUd6j/bEmeRHwsLn1xLA5wllEYsZ5zNuMsDus235ONOnCRwexqof/J3aztyQswSmiaA==
+"react-native@npm:react-native-tvos@0.73.6-3":
+  version "0.73.6-3"
+  resolved "https://registry.yarnpkg.com/react-native-tvos/-/react-native-tvos-0.73.6-3.tgz#8b50ea844e2c856d443f21152d67f539269d786c"
+  integrity sha512-EyGEOfyYiDwKvefKzm9Dth9Lm4tWRyyBqJfV6qRecvUYGJdkruaBNrouAlPoLGmDte9MVCXvdv9UoNbvHfo9Jg==
   dependencies:
     "@jest/create-cache-key-function" "^29.6.3"
     "@react-native-community/cli" "12.3.6"
     "@react-native-community/cli-platform-android" "12.3.6"
     "@react-native-community/cli-platform-ios" "12.3.6"
+    "@react-native-tvos/virtualized-lists" "0.73.6-3"
     "@react-native/assets-registry" "0.73.1"
     "@react-native/codegen" "0.73.3"
     "@react-native/community-cli-plugin" "0.73.17"
     "@react-native/gradle-plugin" "0.73.4"
     "@react-native/js-polyfills" "0.73.1"
     "@react-native/normalize-colors" "0.73.2"
-    "@react-native/virtualized-lists" "0.73.4"
     abort-controller "^3.0.0"
     anser "^1.4.9"
     ansi-regex "^5.0.0"
@@ -5455,7 +5455,7 @@ react-native@0.73.6:
     nullthrows "^1.1.1"
     pretty-format "^26.5.2"
     promise "^8.3.0"
-    react-devtools-core "^4.27.7"
+    react-devtools-core "^4.28.4"
     react-refresh "^0.14.0"
     react-shallow-renderer "^16.15.0"
     regenerator-runtime "^0.13.2"
