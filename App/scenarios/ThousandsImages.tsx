@@ -18,7 +18,7 @@ export default function ThousandsImages(props: {
       <Image
         style={{width: 100, height: 100, margin: 5}}
         source={{
-          uri: 'https://placekitten.com/100/100',
+          uri: 'https://picsum.photos/200/300',
         }}
       />
     );

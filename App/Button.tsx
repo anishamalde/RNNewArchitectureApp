@@ -5,26 +5,23 @@
  * @format
  */
 
-import React from 'react';
-import {useState} from 'react';
-import MarkerNativeModule from './js/NativeMarkerModule';
-import PaintMarkerNativeComponent from './js/PaintMarkerNativeComponent';
-import {Text, Pressable, StyleSheet} from 'react-native';
+import {Text, TouchableOpacity, StyleSheet} from 'react-native';
 
 export default function Button(props: {
   onPress: (timestamp: number) => void;
   title: string;
 }): JSX.Element {
   return (
-    <Pressable
+    <TouchableOpacity
       style={styles.button}
       onPress={event => {
+        console.log(event.nativeEvent);
         props.onPress(event.nativeEvent.timestamp);
       }}>
       <Text numberOfLines={2} style={styles.text}>
         {props.title}
       </Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 }
 
