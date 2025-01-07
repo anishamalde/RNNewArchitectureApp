@@ -41,9 +41,6 @@ class MainApplication : Application(), ReactApplication {
         super.onCreate()
         SoLoader.init(this,  /* native exopackage */false)
 
-        Log.d("MainApplication", "IS_NEW_ARCHITECTURE_ENABLED: ${BuildConfig.IS_NEW_ARCHITECTURE_ENABLED}")
-        Log.d("MainApplication", "Fabric Enabled: $fabricEnabled")
-
         if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
             // If you opted-in for the New Architecture, we load the native entry point for this app.
             load(turboModulesEnabled, fabricEnabled)

@@ -44,10 +44,10 @@ function App(): JSX.Element {
         perfTest = <ThousandsTexts markerName="texts5000" count={5000} />;
         break;
       case Scenarios.Image1500:
-        perfTest = <ThousandsImages markerName="images1500" count={1500} />;
+        perfTest = <ThousandsImages markerName="images1500" count={150} />;
         break;
       case Scenarios.Image5000:
-        perfTest = <ThousandsImages markerName="images5000" count={5000} />;
+        perfTest = <ThousandsImages markerName="images5000" count={500} />;
         break;
       case Scenarios.Custom:
         perfTest = (
@@ -99,14 +99,14 @@ function App(): JSX.Element {
                 RTNTimeToRender?.startMarker('images1500', timestamp);
                 setScenario(Scenarios.Image1500);
               }}
-              title="Render 1500 <Image />"
+              title="Render 150 <Image />"
             />
             <Button
               onPress={timestamp => {
                 RTNTimeToRender?.startMarker('images5000', timestamp);
                 setScenario(Scenarios.Image5000);
               }}
-              title="Render 5000 <Image />"
+              title="Render 500 <Image />"
             />
             <Button
               onPress={timestamp => {

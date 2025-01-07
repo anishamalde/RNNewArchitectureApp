@@ -6,28 +6,45 @@
  */
 
 import React from 'react';
-import {Image} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import MeasureComponent from '../MeasureComponent';
 
-export default function ThousandsImages(props: {
+
+interface ThousandsImagesProps {
   markerName: string;
   count: number;
-}): JSX.Element {
-  const views = Array.from(Array(props.count).keys()).map((element, index) => {
+}
+
+export default function ThousandsImages({
+  markerName,
+  count,
+}: ThousandsImagesProps): JSX.Element {
+  const views = Array.from(Array(count).keys()).map((_, index) => {
     return (
       <Image
-        style={{width: 100, height: 100, margin: 5}}
-        source={{
-          uri: 'https://picsum.photos/200/300',
-        }}
+        key={index}
+        style={styles.stretch}
+        source={require('./movie.png')}
       />
     );
   });
+
   return (
-    <MeasureComponent
-      title={`${props.count} <Image />`}
-      markerName={props.markerName}>
-      {views}
+    <MeasureComponent title={`${count} <Image />`} markerName={markerName}>
+      <View style={styles.container}>{views}</View>
     </MeasureComponent>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  stretch: {
+    width: 150,
+    height: 150,
+    margin: 5,
+  },
+});
