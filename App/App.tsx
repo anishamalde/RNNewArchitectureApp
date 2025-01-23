@@ -27,6 +27,11 @@ enum Scenarios {
 
 function App(): JSX.Element {
   const [scenario, setScenario] = useState<Scenarios | null>(null);
+  const uiManager = global?.nativeFabricUIManager
+    ? 'Using Fabric'
+    : 'Not using Fabric';
+
+  console.log(`${uiManager}`);
 
   let perfTest = null;
   if (scenario != null) {
