@@ -13,7 +13,7 @@ class MainApplication : Application(), ReactApplication {
 
     companion object {
         const val turboModulesEnabled = true
-        const val fabricEnabled = true
+        const val fabricEnabled = false
     }
     private val mReactNativeHost: ReactNativeHost = object : DefaultReactNativeHost(this) {
         override fun getUseDeveloperSupport() = BuildConfig.DEBUG
