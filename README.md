@@ -78,7 +78,7 @@ To build and run the benchmarks, please install the necessary dependencies. Plea
 4. `yarn android --mode release` to build the app with optimisations.
 5. `yarn android` to build the app in debug mode.
 
-> Note: For Android you will may be able to switch architectures during run time. To switch to the old architecture, set the newArchEnabled variable to false in the [gradle.properties](./App/android/gradle.properties) file.
+> Note: For Android you may not be able to switch architectures during run time. To switch to the old architecture, set the newArchEnabled variable to false in the [gradle.properties](./App/android/gradle.properties) file.
 
 </details>
 
