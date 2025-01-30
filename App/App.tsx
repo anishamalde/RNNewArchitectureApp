@@ -7,7 +7,7 @@
 
 import React from 'react';
 import {useState} from 'react';
-import {View, ScrollView, SafeAreaView, StyleSheet} from 'react-native';
+import {Text, ScrollView, SafeAreaView, StyleSheet} from 'react-native';
 import RTNTimeToRender from 'rtn-timetorender/js/NativeTimeToRender';
 import ThousandViews from './scenarios/ThousandsViews';
 import ThousandsTexts from './scenarios/ThousandsTexts';
@@ -19,16 +19,14 @@ enum Scenarios {
   Views5000,
   Text5000,
   Image5000,
-  MovieCard1000,
+  MovieCard1500,
 }
 
 function App(): JSX.Element {
   const [scenario, setScenario] = useState<Scenarios | null>(null);
   const uiManager = global?.nativeFabricUIManager
-    ? 'Using Fabric'
-    : 'Not using Fabric';
-
-  console.log(`${uiManager}`);
+    ? 'New Architecture'
+    : 'Old Architecture';
 
   let perfTest = null;
   if (scenario != null) {
@@ -42,8 +40,8 @@ function App(): JSX.Element {
       case Scenarios.Image5000:
         perfTest = <ThousandsImages markerName="images5000" count={5000} />;
         break;
-      case Scenarios.MovieCard1000:
-        perfTest = <MovieCards markerName="movies1000" count={1500} />;
+      case Scenarios.MovieCard1500:
+        perfTest = <MovieCards markerName="movies1500" count={1500} />;
         break;
     }
   }
@@ -51,7 +49,8 @@ function App(): JSX.Element {
     <SafeAreaView>
       <ScrollView contentContainerStyle={styles.scrollcontainer}>
         {scenario === null ? (
-          <View style={styles.container}>
+          <>
+            <Text style={styles.text}>{uiManager}</Text>
             <Button
               onPress={timestamp => {
                 RTNTimeToRender?.startMarker('views5000', timestamp);
@@ -78,13 +77,13 @@ function App(): JSX.Element {
             />
             <Button
               onPress={timestamp => {
-                RTNTimeToRender?.startMarker('movies1000', timestamp);
-                setScenario(Scenarios.MovieCard1000);
+                RTNTimeToRender?.startMarker('movies1500', timestamp);
+                setScenario(Scenarios.MovieCard1500);
               }}
-              title="Render 5000 <MovieCard />"
+              title="Render 1500 <MovieCard />"
               emoji="🍿"
             />
-          </View>
+          </>
         ) : null}
         {scenario != null ? (
           <>
@@ -110,4 +109,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text:{
+    fontSize: 20,
+    padding: 15,
+  }
 });

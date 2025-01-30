@@ -12,6 +12,7 @@ import {Text, Pressable, StyleSheet} from 'react-native';
 export default function Button(props: {
   onPress: (timestamp: number) => void;
   title: string;
+  emoji?: string;
 }): JSX.Element {
   return (
     <Pressable
@@ -19,7 +20,8 @@ export default function Button(props: {
       onPress={event => {
         props.onPress(event.nativeEvent.timestamp);
       }}>
-      <Text numberOfLines={2} style={styles.text}>
+      <Text style={styles.text}>
+        {props.emoji && <Text style={styles.emoji}>{props.emoji} </Text>}
         {props.title}
       </Text>
     </Pressable>
@@ -43,4 +45,8 @@ const styles = StyleSheet.create({
     letterSpacing: 0.25,
     color: 'white',
   },
+  emoji:{
+    fontSize: 20,
+    paddingBottom: 3,
+  }
 });

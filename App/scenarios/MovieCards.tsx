@@ -31,7 +31,7 @@ export default function MovieCards({
   });
 
   return (
-    <MeasureComponent title={`${count} <Image />`} markerName={markerName}>
+    <MeasureComponent title={`${count} <MovieCard />`} markerName={markerName}>
       <View style={styles.container}>{views}</View>
     </MeasureComponent>
   );
