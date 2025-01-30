@@ -8,7 +8,7 @@
 import React from 'react';
 import {useState} from 'react';
 import RTNTimeToRender from 'rtn-timetorender/js/RTNTimeToRenderNativeComponent';
-import {Text, View} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 
 export default function MeasureComponent(props: {
   children: React.ReactNode;
@@ -19,13 +19,11 @@ export default function MeasureComponent(props: {
   return (
     <>
       {renderTime != null ? (
-        <Text>
+        <Text style={styles.renderText}>
           Took {renderTime}ms to render {props.title}
         </Text>
       ) : null}
-      <View
-        style={{margin: 10, height: 5, width: '100%', backgroundColor: 'black'}}
-      />
+      <View style={styles.renderTextContainer} />
       {props.children}
       <RTNTimeToRender
         markerName={props.markerName}
@@ -36,3 +34,16 @@ export default function MeasureComponent(props: {
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  renderTextContainer: {
+    margin: 10,
+    height: 5,
+    width: '100%',
+    backgroundColor: 'black',
+  },
+  renderText: {
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+});

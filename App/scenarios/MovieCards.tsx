@@ -20,12 +20,8 @@ export default function MovieCards({
 }: MovieCardProps): JSX.Element {
   const views = Array.from(Array(count).keys()).map((_, index) => {
     return (
-      <View style={styles.card}>
-        <Image
-          key={index}
-          style={styles.image}
-          source={require('./movie.png')}
-        />
+      <View key={index} style={styles.card}>
+        <Image style={styles.image} source={require('./movie.png')} />
         <Text style={styles.title}>Balloons Overboard</Text>
         <Text style={styles.description} numberOfLines={5}>
           When a cruise ship's entertainment goes hilariously wrong . . . 
@@ -58,9 +54,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 5,
     color: '#000',
+    paddingLeft: 5,
   },
   description: {
     color: '#666',
+    paddingLeft: 5,
   },
   card: {
     backgroundColor: '#f9f9f9',

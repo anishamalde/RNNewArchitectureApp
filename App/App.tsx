@@ -7,7 +7,7 @@
 
 import React from 'react';
 import {useState} from 'react';
-import {Text, ScrollView, SafeAreaView} from 'react-native';
+import {View, ScrollView, SafeAreaView, StyleSheet} from 'react-native';
 import RTNTimeToRender from 'rtn-timetorender/js/NativeTimeToRender';
 import ThousandViews from './scenarios/ThousandsViews';
 import ThousandsTexts from './scenarios/ThousandsTexts';
@@ -49,17 +49,16 @@ function App(): JSX.Element {
   }
   return (
     <SafeAreaView>
-      <ScrollView
-        contentContainerStyle={{alignItems: 'center'}}
-        automaticallyAdjustContentInsets={true}>
+      <ScrollView contentContainerStyle={styles.scrollcontainer}>
         {scenario === null ? (
-          <>
+          <View style={styles.container}>
             <Button
               onPress={timestamp => {
                 RTNTimeToRender?.startMarker('views5000', timestamp);
                 setScenario(Scenarios.Views5000);
               }}
               title="Render 5000 <View />"
+              emoji="👓"
             />
             <Button
               onPress={timestamp => {
@@ -67,6 +66,7 @@ function App(): JSX.Element {
                 setScenario(Scenarios.Text5000);
               }}
               title="Render 5000 <Text />"
+              emoji="🔤"
             />
             <Button
               onPress={timestamp => {
@@ -74,6 +74,7 @@ function App(): JSX.Element {
                 setScenario(Scenarios.Image5000);
               }}
               title="Render 5000 <Image />"
+              emoji="🎨"
             />
             <Button
               onPress={timestamp => {
@@ -81,8 +82,9 @@ function App(): JSX.Element {
                 setScenario(Scenarios.MovieCard1000);
               }}
               title="Render 5000 <MovieCard />"
+              emoji="🍿"
             />
-          </>
+          </View>
         ) : null}
         {scenario != null ? (
           <>
@@ -101,3 +103,11 @@ function App(): JSX.Element {
 }
 
 export default App;
+
+const styles = StyleSheet.create({
+  scrollcontainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});

@@ -7,8 +7,6 @@
 
 import React from 'react';
 import {useState} from 'react';
-import MarkerNativeModule from './js/NativeMarkerModule';
-import PaintMarkerNativeComponent from './js/PaintMarkerNativeComponent';
 import {Text, Pressable, StyleSheet} from 'react-native';
 
 export default function Button(props: {
@@ -32,8 +30,7 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
+    padding: 15,
     borderRadius: 15,
     backgroundColor: 'grey',
     flex: 1,
