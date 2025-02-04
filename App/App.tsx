@@ -7,7 +7,13 @@
 
 import React from 'react';
 import {useState} from 'react';
-import {Text, ScrollView, SafeAreaView, StyleSheet} from 'react-native';
+import {
+  Text,
+  ScrollView,
+  SafeAreaView,
+  StyleSheet,
+  TVFocusGuideView,
+} from 'react-native';
 import RTNTimeToRender from 'rtn-timetorender/js/NativeTimeToRender';
 import ThousandViews from './scenarios/ThousandsViews';
 import ThousandsTexts from './scenarios/ThousandsTexts';
@@ -46,7 +52,7 @@ function App(): JSX.Element {
     }
   }
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollcontainer}>
         {scenario === null ? (
           <>
@@ -109,8 +115,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text:{
+  container: {
+    backgroundColor: '#3b3b3b',
+    height: '100%'
+  },
+  text: {
     fontSize: 20,
     padding: 15,
+    fontWeight: 'bold',
+    color: 'white'
   }
 });

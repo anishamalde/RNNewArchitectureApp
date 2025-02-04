@@ -45,5 +45,6 @@ const styles = StyleSheet.create({
   renderText: {
     fontWeight: 'bold',
     fontSize: 20,
+    color: 'white'
   },
 });

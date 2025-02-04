@@ -6,25 +6,31 @@
  */
 
 import React from 'react';
-import {useState} from 'react';
-import {Text, Pressable, StyleSheet} from 'react-native';
+import {Text, StyleSheet, TouchableOpacity} from 'react-native';
 
 export default function Button(props: {
   onPress: (timestamp: number) => void;
   title: string;
   emoji?: string;
 }): JSX.Element {
+
+  const [isFocused, setIsFocused] = React.useState(false);
+
   return (
-    <Pressable
-      style={styles.button}
+    <TouchableOpacity
+      style={[styles.button, isFocused && styles.focusedButton]}
       onPress={event => {
         props.onPress(event.nativeEvent.timestamp);
-      }}>
+      }}
+      onFocus={() => {
+        setIsFocused(true);
+      }}
+      onBlur={() => setIsFocused(false)}>
       <Text style={styles.text}>
         {props.emoji && <Text style={styles.emoji}>{props.emoji} </Text>}
         {props.title}
       </Text>
-    </Pressable>
+    </TouchableOpacity>
   );
 }
 
@@ -45,7 +51,11 @@ const styles = StyleSheet.create({
     letterSpacing: 0.25,
     color: 'white',
   },
-  emoji:{
+  focusedButton: {
+    borderWidth: 5,
+    borderColor: 'yellow',
+  },
+  emoji: {
     fontSize: 20,
     paddingBottom: 3,
   }
